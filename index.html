@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/font/css/fontello.css">
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+
+            >div {
+                position: absolute;
+                left: 5%;
+                top: 5%;
+                width: 140px;
+                height: 50px;
+                animation: anime4 10s infinite linear;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+
+                &:hover {
+                    animation-play-state: paused;
+                    >a{
+                        opacity: 1;
+                        transform: translateY(-25px);
+                    }
+                }
+
+                >h1 {
+                    font-size: 20px;
+                    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                }
+                >a{
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    background-color: black;
+                    position: absolute;
+                    opacity: 0;
+                    transition: .6s;
+                    text-decoration: none;
+                    font-size: 16px;
+                    &:nth-of-type(1){
+                        left: 10%;
+                        top: 20px;
+                    }
+                    &:nth-of-type(2){
+                        left: 45%;
+                        top: 20px;
+                        
+                    }
+                    &:nth-of-type(3){
+                        left: 80%;
+                        top: 20px;
+                        
+                    }
+                    >i{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        background-color: black;
+                        border-radius: 50%;
+                    }
+                    &:hover{
+                        transform: translateY(-30px);
+                    }
+                }
+            }
+
+            >main {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                >.slider {
+                    width: 600px;
+                    height: 450px;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    border: 1px solid black;
+
+
+
+                    &:hover {
+                        >img {
+                            animation-play-state: paused;
+                        }
+                    }
+
+                    >figure {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        object-fit: cover;
+
+                        &:hover {
+                            >h3 {
+                                opacity: 1;
+                            }
+                        }
+
+
+                        >h3 {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-end;
+                            padding-bottom: 50px;
+                            font-weight: normal;
+                            color: white;
+                            width: 100%;
+                            height: 100%;
+                            background-image: linear-gradient(to top, black, 30%, transparent);
+                            z-index: 4;
+                            opacity: 0;
+                            transition: .4s;
+
+                        }
+
+                        &:nth-of-type(1) {
+                            animation: anime1 15s infinite;
+
+                            >img {
+                                left: 0;
+                                top: 0;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            animation: anime2 15s infinite;
+
+                            >img {
+                                top: 0;
+                                left: 0;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            animation: anime3 15s infinite;
+
+                            img {
+                                top: 0;
+                                left: 0;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+
+
+                    }
+                }
+            }
+        }
+
+        @keyframes anime1 {
+
+            0%,
+            30%,
+            100% {
+                transform: translateX(0);
+            }
+
+            36% {
+                transform: translateX(100%);
+            }
+
+            36.0000001%,
+            94% {
+                transform: translateX(-100%);
+            }
+
+
+        }
+
+        @keyframes anime2 {
+
+            0%,
+            30% {
+                transform: translateX(-100%);
+            }
+
+            36%,
+            63% {
+                transform: translateX(0%);
+            }
+
+            69% {
+                transform: translateX(100%);
+            }
+
+            69.000001%,
+            100% {
+                transform: translateX(-100%);
+            }
+
+        }
+
+        @keyframes anime3 {
+
+            0%,
+            63% {
+                transform: translateX(-100%);
+            }
+
+            69%,
+            94% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes anime4 {
+            0% {
+                left: 5%;
+                top: 10%;
+                transform: rotate(0deg);
+            }
+
+            25% {
+                left: 80%;
+                top: 10%;
+                transform: rotate(360deg);
+            }
+
+            50% {
+                left: 80%;
+                top: 90%;
+                transform: rotate(0deg);
+            }
+
+            75% {
+                left: 5%;
+                top: 90%;
+                transform: rotate(360deg);
+            }
+
+            100% {
+                left: 5%;
+                top: 10%;
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="slider">
+            <figure>
+                <img src="assets/images/dog1.jpeg" alt="">
+                <h3>Dog 1</h3>
+            </figure>
+            <figure>
+                <img src="assets/images/dog2.jpg" alt="">
+                <h3>Dog 2</h3>
+            </figure>
+            <figure>
+                <img src="assets/images/dog3.jpg" alt="">
+                <h3>Dog 3</h3>
+            </figure>
+        </div>
+    </main>
+    <div>
+        <h1>Ermia Razavi</h1>
+        <a href="https://www.linkedin.com/in/ermia-razavi-a611312a3/"><i class="icon-linkedin"></i></a>
+        <a href="https://github.com/ErmiaRZV"><i class="icon-github-circled"></i></a>
+        <a href="https://www.instagram.com/ermia_razavi.dev/?utm_source=ig_web_button_share_sheet"><i class="icon-instagram"></i></a>
+    </div>
+</body>
+
+</html>
